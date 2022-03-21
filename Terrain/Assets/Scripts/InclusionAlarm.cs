@@ -16,6 +16,7 @@ public class InclusionAlarm : MonoBehaviour
             _alarm.Stop();
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.TryGetComponent<Player>(out Player player))
@@ -23,12 +24,7 @@ public class InclusionAlarm : MonoBehaviour
             _alarm.Play();
         }
     }
-    void Start()
-    {
 
-    }
-
-    // Update is called once per frame
     void Update()
     {
         ChangeVolumeAlarm();
