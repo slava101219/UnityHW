@@ -8,45 +8,48 @@ public class InclusionAlarm : MonoBehaviour
     [SerializeField] private AudioSource _alarm;
     private bool _isReductionAlarm = true;
     private float _valueReductionAlarm = 0.01f;
+    private Coroutine changeVolume;
 
     private void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent<Player>(out Player player))
         {
             _alarm.Stop();
+            StopCoroutine(changeVolume);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent<Player>(out Player player))
+        if (other.TryGetComponent<Player>(out Player player))
         {
             _alarm.Play();
+             changeVolume = StartCoroutine(ChangeVolumeAlarm());
+            
         }
     }
 
-    void Update()
+    private IEnumerator ChangeVolumeAlarm()
     {
-        ChangeVolumeAlarm();
-    }
-
-    private void ChangeVolumeAlarm()
-    {
-        if(_isReductionAlarm)
+        while (true)
         {
-            _alarm.volume -= _valueReductionAlarm;
-            if(_alarm.volume == 0)
+            if (_isReductionAlarm)
             {
-                _isReductionAlarm = false;
+                _alarm.volume -= _valueReductionAlarm;
+                if (_alarm.volume == 0)
+                {
+                    _isReductionAlarm = false;
+                }
             }
-        }
-        else
-        {
-            _alarm.volume += _valueReductionAlarm;
-            if(_alarm.volume == 1)
+            else
             {
-                _isReductionAlarm = true;
+                _alarm.volume += _valueReductionAlarm;
+                if (_alarm.volume == 1)
+                {
+                    _isReductionAlarm = true;
+                }
             }
+            yield return null;
         }
     }
 }
