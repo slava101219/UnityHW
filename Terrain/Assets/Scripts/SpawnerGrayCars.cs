@@ -8,17 +8,12 @@ public class SpawnerGrayCars : MonoBehaviour
     [SerializeField] private GameObject _targetPoint;
     [SerializeField] private GameObject[] _spawnPionts;
 
-    private static System.Random random = new System.Random();
-    private int xCoordinateTarget = 18;
+    private static System.Random _random = new System.Random();
+    private int _xCoordinateTarget = 18;
     
-    void Start()
+    private void Start()
     {
         var spawnCar = StartCoroutine(SpawnCars());
-    }
-
-    void Update()
-    {
-        
     }
 
     private IEnumerator SpawnCars()
@@ -32,7 +27,7 @@ public class SpawnerGrayCars : MonoBehaviour
             {
                 enemy.transform.position = Vector3.MoveTowards(enemy.transform.position, _targetPoint.transform.position, Time.deltaTime*10);
 
-                if (enemy.transform.position.x < xCoordinateTarget)
+                if (enemy.transform.position.x < _xCoordinateTarget)
                 {
                     Destroy(enemy);
                 }

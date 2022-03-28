@@ -1588,3 +1588,21 @@ AssetImportParameters requested are different than current active one (requested
   custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 4173.198417 seconds.
+  path: Assets/Scripts/SpawnerGrayCars.cs
+  artifactKey: Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SpawnerGrayCars.cs using Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f6a4ba7ca63692e6a50fb0c6d113176') in 0.010018 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 31.971238 seconds.
+  path: Assets/Scripts/SpawnerGrayCars.cs
+  artifactKey: Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SpawnerGrayCars.cs using Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '53e26965ded1d6baa9217815b72c02cc') in 0.002532 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 43.398127 seconds.
+  path: Assets/Scripts/SpawnerGrayCars.cs
+  artifactKey: Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scripts/SpawnerGrayCars.cs using Guid(b7a8cdd3b983f594cb2d24943d36e9a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33765e2612725aae21f94a76773b27fe') in 0.002531 seconds 
