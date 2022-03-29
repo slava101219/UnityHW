@@ -526,12 +526,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a8cdd3b983f594cb2d24943d36e9a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _prefabCar: {fileID: 4871542464778382334, guid: cfb70e52f720e284a87281d080f1a1d3, type: 3}
+  _prefab: {fileID: 4871542464778382334, guid: cfb70e52f720e284a87281d080f1a1d3, type: 3}
   _targetPoint: {fileID: 1825078096}
   _spawnPionts:
-  - {fileID: 856632278}
-  - {fileID: 93876340}
   - {fileID: 1813722380}
+  - {fileID: 93876340}
+  - {fileID: 856632278}
+  _speed: 10
 --- !u!1001 &1104173647
 PrefabInstance:
   m_ObjectHideFlags: 0
