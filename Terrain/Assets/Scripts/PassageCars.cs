@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class PassageCars : MonoBehaviour
 {
-    [SerializeField] private GameObject _prefab;
     [SerializeField] private GameObject _targetPoint;
-    [SerializeField] private GameObject[] _spawnPionts;
+    [SerializeField] private Spawner _spawner;
     [SerializeField] private int _speed;
     
-    private int _seconds = 2;
+    private int _secondsOfWaiting = 2;
     private int _xCoordinateTarget = 18;
     
     
@@ -20,20 +19,14 @@ public class PassageCars : MonoBehaviour
 
     private IEnumerator Show()
     {
-        WaitForSeconds waitTime = new WaitForSeconds(_seconds);
+        WaitForSeconds waitTime = new WaitForSeconds(_secondsOfWaiting);
 
         while (true)
         {
-            GameObject car = Spawn(_prefab);
+            GameObject car = _spawner.Spawn();
             StartCoroutine(Moving(car));
             yield return waitTime;
         }      
-    }
-
-    private GameObject Spawn(GameObject prefab)
-    {
-        int spawnPointIndex = Random.Range(0, _spawnPionts.Length);
-        return Instantiate(prefab, _spawnPionts[spawnPointIndex].transform.position, _spawnPionts[spawnPointIndex].transform.rotation);
     }
 
     private IEnumerator Moving(GameObject car)
