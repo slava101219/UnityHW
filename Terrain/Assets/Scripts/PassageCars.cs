@@ -23,7 +23,8 @@ public class PassageCars : MonoBehaviour
 
         while (true)
         {
-            StartCoroutine(Moving(_spawner.Spawn()));
+            Car car = _spawner.Spawn();
+            StartCoroutine(Moving(car));
             yield return waitTime;
         }      
     }
@@ -32,18 +33,12 @@ public class PassageCars : MonoBehaviour
     {
         WaitForSeconds waitTime = new WaitForSeconds(_secondsOfWaiting); 
 
-        while (car.transform.position != _targetPoint.transform.position)
+        while (car.transform.position.x > _xCoordinateTarget)
         {
             car.transform.position = Vector3.MoveTowards(car.transform.position, _targetPoint.transform.position, Time.deltaTime * _speed);          
-
-            if(car.transform.position.x < _xCoordinateTarget)
-            {
-                Destroy(car);
-            }
-
             yield return null;
         }
 
-        
+        Destroy(car);
     }
 }
