@@ -12,14 +12,13 @@ public class Car : MonoBehaviour
 
     void Start()
     {
+        _targetVector = new Vector3(17, 0, 70);
         _transform = GetComponent<Transform>();
         StartCoroutine(Moving(_transform));
     }
 
     private IEnumerator Moving(Transform transform)
-    {
-        _targetVector = new Vector3(17, 0, 70);
-
+    {       
         while (transform.position.x > _xCoordinateTarget)
         {
             transform.position = Vector3.MoveTowards(transform.position, _targetVector , Time.deltaTime * _speed);

@@ -7,9 +7,19 @@ public class Spawner : MonoBehaviour
     [SerializeField] private Car _car;
     [SerializeField] private GameObject[] _spawnPionts;
 
-    public void Spawn()
+    private int _interval = 2;
+
+    private void Start()
     {
-        int spawnPointIndex = Random.Range(0, _spawnPionts.Length);
-        Instantiate(_car, _spawnPionts[spawnPointIndex].transform.position, _spawnPionts[spawnPointIndex].transform.rotation);
+        StartCoroutine(Spawn());
+    }
+
+    private IEnumerator Spawn()
+    {   while (true)
+        {
+            int spawnPointIndex = Random.Range(0, _spawnPionts.Length);
+            Instantiate(_car, _spawnPionts[spawnPointIndex].transform.position, _spawnPionts[spawnPointIndex].transform.rotation);
+            yield return new WaitForSeconds(_interval);
+        }       
     }
 }
